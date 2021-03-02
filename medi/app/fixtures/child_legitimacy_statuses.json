@@ -1,0 +1,1 @@
+[{"model": "app.childlegitimacy", "pk": 1, "fields": {"status": "legitimate"}}, {"model": "app.childlegitimacy", "pk": 2, "fields": {"status": "illegitimate"}}, {"model": "app.childlegitimacy", "pk": 3, "fields": {"status": "unknown"}}]

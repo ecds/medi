@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- <p style="text-align:right;">Report created: {% now "SHORT_DATE_FORMAT" %} -->
+<h1>Women from before 1350</h1>
+{% for woman in women %}
+<p><b>Name: </b>{{woman.name}}</p>
+<p><b>Year: </b>{{woman.date_cal|date:'Y'}}
+{% if woman.children %}
+<p><b>Children: </b>
+  <ul>
+  {% for child in woman.children %}
+  <li>{{child.name}}, {{child.age_category}}, {{child.legitimacy.status}}</li>
+  {% endfor %}
+  </ul>
+</p>
+{% endif %}
+{% if woman.related_women_qs %}
+<p><b>Related Women: </b>
+  <ul>
+  {% for item in woman.related_women_qs %}
+  <li>{{item.related_woman.name}}, {{item.relationship}}</li>
+  {% endfor %}
+  </ul>
+</p>
+{% endif %}
+<hr style="border-top-color:black;">
+{% endfor %}
+{% endblock %}

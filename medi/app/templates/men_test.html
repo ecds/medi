@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1 style="font-size:1.5em;">Men who have fathered more than one illegitimate child by different women</h1>
+<ul>
+{% for man in men %}
+<div class="table-responsive">
+<h2>{{man.name}}<h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Child's Name</th>
+      <th>Mother</th>
+      <th>Legitimacy</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for child in man.children %}
+    <tr>
+      <td>{{child.name}}</td>
+      <td>{{child.woman.name}}</td>
+      <td>{{child.legitimacy.status}}</td>
+      <td>{{child.woman.date_cal|date:'Y'}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+<hr style="border-top-color:black;">
+{% endfor %}
+</ul>
+{% endblock %}

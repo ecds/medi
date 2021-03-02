@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Women who had illegitimate children</h1>
+{% for woman in women %}
+<p><b>Name: </b>{{woman.name}}</p>
+<p><b>Year: </b>{{woman.date_cal|date:'Y'}}
+<p><b>Children: </b>
+  <ul>
+  {% for child in woman.children %}
+  <li>{{child.name}}, {{child.age_category}}, {{child.legitimacy.status}}</li>
+  {% endfor %}
+  </ul>
+</p>
+<hr style="border-top-color:black;">
+{% endfor %}
+{% endblock %}

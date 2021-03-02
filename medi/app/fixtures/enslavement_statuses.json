@@ -1,0 +1,1 @@
+[{"model": "app.enslavementstatus", "pk": 1, "fields": {"status": "Enslaved"}}, {"model": "app.enslavementstatus", "pk": 2, "fields": {"status": "Formerly enslaved"}}]

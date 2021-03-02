@@ -1,0 +1,33 @@
+{% load static %}
+<head>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <style>
+    .login {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Singlewomen in the medieval Mediterranean</a>
+      </div>
+      <ul class="nav navbar-nav login">
+        <li><a href="/admin">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+{% if user.is_authenticated %}
+<div class="container-fluid">{% block content %}{% endblock content %}</div>
+{% else %}
+<div class="container-fluid" style="max-width:50%;">
+  <a href="https://en.wikipedia.org/wiki/Medieval_singlewomen">
+    <img class="img-thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Women_activities_in_middle_ages.JPG" alt="Artistic representation of women in the Middle Ages.">
+  </a>
+</div>
+{% endif %}
+</body>

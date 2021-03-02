@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+  <h1>Queries</h1>
+  <ul>
+    <li><a href="{% url 'date_test' %}">Women before 1350</a></li>
+    <li><a href="{% url 'women_test' %}">Women who had illegitimate children</a></li>
+    <li><a href="{% url 'men_test' %}">Men who have fathered more than one illegitimate child by different women</a></li>
+  </ul>
+</div>
+{% endblock %}
