@@ -1,6 +1,7 @@
 from django.db import models
 from django_date_extensions.fields import ApproximateDateField
 from django.db.models import Q
+from django.utils.html import mark_safe
 
 class Woman(models.Model):
     MARITAL_STATUS_CHOICES = (
@@ -57,6 +58,7 @@ class Woman(models.Model):
     archive = models.CharField(max_length=255, blank=True, null=True)
     shelfmark = models.CharField(max_length=255, blank=True, null=True)
     data_enterer = models.CharField(max_length=255, blank=True, null=True)
+    document_image = models.ImageField(upload_to='images/', blank=True)
 
     @property
     def children(self):

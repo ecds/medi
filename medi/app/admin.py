@@ -88,7 +88,7 @@ class WomanAdmin(DjangoQLSearchMixin, ExportMixin, admin.ModelAdmin):
             'fields': ('date_as_written', 'date_cal', 'date_range', 'document_type', 'description', 'transcription', 'comments', 'archive', 'shelfmark')
         }),
         (None, {
-            'fields': ('data_enterer',)
+            'fields': ('data_enterer', 'document_image')
         }),
     )
     list_filter = (('date_cal', DateRangeFilter),

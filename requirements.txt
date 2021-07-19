@@ -6,3 +6,4 @@ django-date-extensions
 django-admin-rangefilter
 djangoql
 django-autocomplete-light
+pillow 
