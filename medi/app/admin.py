@@ -85,7 +85,7 @@ class WomanAdmin(DjangoQLSearchMixin, ExportMixin, admin.ModelAdmin):
         }),
         ('Document Details', {
             #'classes': ('collapse',),
-            'fields': ('date_as_written', 'date_cal', 'date_range', 'document_type', 'description', 'transcription', 'comments', 'archive', 'shelfmark')
+            'fields': ('date_as_written', 'date_cal', 'date_range', 'document_type', 'description', 'transcription', 'comments', 'archive', 'shelfmark', 'folio', 'pub_reg_title', 'pub_reg_vol', 'pub_reg_doc', 'pub_reg_page')
         }),
         (None, {
             'fields': ('data_enterer', 'document_image')

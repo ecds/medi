@@ -57,6 +57,11 @@ class Woman(models.Model):
     comments = models.TextField(blank=True, null=True)
     archive = models.CharField(max_length=255, blank=True, null=True)
     shelfmark = models.CharField(max_length=255, blank=True, null=True)
+    folio = models.CharField(max_length=255, blank=True, null=True)
+    pub_reg_title = models.CharField(max_length=255, blank=True, null=True, verbose_name="Published Register Title")
+    pub_reg_vol = models.CharField(max_length=255, blank=True, null=True, verbose_name="Published Register Volume")
+    pub_reg_doc = models.CharField(max_length=255, blank=True, null=True, verbose_name="Published Register Document no.")
+    pub_reg_page = models.CharField(max_length=255, blank=True, null=True, verbose_name="Published Register Page no.")
     data_enterer = models.CharField(max_length=255, blank=True, null=True)
     document_image = models.ImageField(upload_to='images/', blank=True)
 
