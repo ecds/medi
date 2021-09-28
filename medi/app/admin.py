@@ -73,7 +73,7 @@ class WomanResource(resources.ModelResource):
 class WomanAdmin(DjangoQLSearchMixin, ExportMixin, admin.ModelAdmin):
     djangoql_completion_enabled_by_default = False
     resource_class = WomanResource
-    list_display = ['id', 'name', 'age_category', 'occupation', 'date_cal']
+    list_display = ['id', 'name', 'marital_status', 'location_of_transaction', 'occupation']
     search_fields = ['name', 'name_variations', 'marital_status', 'identifier__name', 'conc_or_pro', 'age_literal', 'age_category', 'activity', 'origin__name', 'location_of_transaction__name',  'occupation', 'enslavement_status__status', 'location_sold__name', 'sale_details', 'enslavement_details', 'enslavement_occupation', 'date_as_written', 'date_range', 'document_type__document_type', 'description__description', 'transcription', 'comments', 'archive', 'shelfmark', 'data_enterer']
     fieldsets = (
         (None, {
